@@ -120,7 +120,7 @@ export default function ProcedurePage() {
             </div>
           </ScrollReveal>
           <ScrollReveal direction="right" distance={20} duration={0.8} delay={0.1}>
-            <div className="overflow-hidden rounded-sm shadow-lg bg-white">
+            <div className="overflow-hidden rounded-sm shadow-lg bg-gray-50">
               <img
                 src={introImage}
                 alt={procedure.title}

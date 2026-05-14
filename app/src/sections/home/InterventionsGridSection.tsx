@@ -63,7 +63,7 @@ export default function InterventionsGridSection() {
                 to={`/chirurgie/${proc.slug}`}
                 className="group block bg-white overflow-hidden border border-[var(--line)] hover:border-[var(--accent)] hover:shadow-lg transition-all duration-300"
               >
-                <div className="overflow-hidden h-48 bg-white flex items-center justify-center">
+                <div className="overflow-hidden h-48 bg-gray-50 flex items-center justify-center">
                   <img
                     src={getProcedureImage(proc.slug)}
                     alt={`${proc.title} — Dr. Aib Amar Alger`}
