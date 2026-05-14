@@ -10,9 +10,9 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className="bg-[var(--dark-2)] py-16 md:py-20 px-6 md:px-12">
+    <section className="bg-[var(--accent)] py-16 md:py-20 px-6 md:px-12">
       <ScrollReveal>
-        <div className="max-w-[1280px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-8">
+        <div className="max-w-[1280px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {stats.map((stat) => (
             <StatBlock
               key={stat.label}
@@ -20,6 +20,7 @@ export default function StatsSection() {
               label={stat.label}
               isText={stat.isText}
               suffix={stat.suffix}
+              light
             />
           ))}
         </div>

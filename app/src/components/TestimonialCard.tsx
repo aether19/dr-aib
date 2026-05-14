@@ -5,15 +5,18 @@ interface Props {
 
 export default function TestimonialCard({ quote, source }: Props) {
   return (
-    <div className="relative bg-[var(--bg-alt)] p-8 md:p-10">
-      <span className="absolute top-4 left-6 font-display text-[80px] font-light leading-none text-[var(--accent)] opacity-20 select-none z-0">
+    <div className="relative bg-[var(--bg-alt)] p-8 md:p-10 border border-[var(--line)] hover:border-[var(--accent)] transition-colors duration-300 group">
+      {/* Quote mark */}
+      <span className="block font-display text-[56px] font-normal leading-none text-[var(--accent)] opacity-30 mb-4 select-none group-hover:opacity-50 transition-opacity duration-300">
         &ldquo;
       </span>
-      <p className="relative z-10 font-display text-[16px] md:text-[18px] font-light italic text-[var(--dark)] leading-[1.7] mt-8">
+      <p className="font-display text-[16px] md:text-[17px] font-normal italic text-[var(--dark)] leading-[1.75]">
         {quote}
       </p>
-      <div className="relative z-10 w-10 h-px bg-[var(--line)] my-6" />
-      <p className="relative z-10 supertitle text-[9px] tracking-[0.14em]">{source}</p>
+      <div className="w-10 h-[1px] bg-[var(--accent)] my-6" />
+      <p className="font-body text-[10px] font-medium uppercase tracking-[0.18em] text-[var(--accent)]">
+        {source}
+      </p>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Poppins:wght@300;400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,15 +6,15 @@
 
 @layer base {
   :root {
-    --bg: #F4EFE8;
-    --bg-alt: #EDE5D8;
-    --dark: #14110D;
-    --dark-2: #1F1B15;
-    --accent: #B07840;
-    --accent-light: #C9975C;
-    --muted: #8A7D6E;
-    --white: #FDFAF6;
-    --line: #DDD3C4;
+    --bg: #ffffff;
+    --bg-alt: #f0f4f6;
+    --dark: #0a0a0a;
+    --dark-2: #1a1a1a;
+    --accent: #5d7a88;
+    --accent-light: #9baeba;
+    --muted: #7a8f9a;
+    --white: #ffffff;
+    --line: #d6dfe2;
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   }
@@ -24,7 +24,7 @@
   }
 
   body {
-    font-family: 'Jost', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 300;
     background-color: var(--bg);
     color: var(--dark);
@@ -34,8 +34,8 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
   }
 
   a {
@@ -62,11 +62,11 @@
 
 @layer components {
   .font-display {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
   }
 
   .font-body {
-    font-family: 'Jost', sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
 
   .text-bronze {
@@ -110,16 +110,16 @@
   }
 
   .supertitle {
-    font-family: 'Jost', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 10px;
-    font-weight: 400;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.22em;
     color: var(--accent);
   }
 
   .label-text {
-    font-family: 'Jost', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 11px;
     font-weight: 400;
     text-transform: uppercase;
@@ -127,15 +127,15 @@
   }
 
   .nav-link {
-    font-family: 'Jost', sans-serif;
-    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
     font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.1em;
   }
 
   .placeholder-label {
-    font-family: 'Jost', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 9px;
     font-weight: 400;
     text-transform: uppercase;
@@ -165,18 +165,6 @@
   animation: marquee 28s linear infinite;
 }
 
-/* Scroll indicator animation */
-@keyframes scrollPulse {
-  0%, 100% {
-    transform: scaleY(0);
-    transform-origin: top;
-  }
-  50% {
-    transform: scaleY(1);
-    transform-origin: top;
-  }
-}
-
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
@@ -199,4 +187,23 @@
 ::selection {
   background-color: var(--accent);
   color: var(--white);
+}
+
+/* Nav underline animation */
+.nav-underline {
+  position: relative;
+}
+.nav-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+.nav-underline:hover::after,
+.nav-underline.active::after {
+  width: 100%;
 }

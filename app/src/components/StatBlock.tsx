@@ -6,16 +6,20 @@ interface Props {
   label: string;
   isText?: boolean;
   suffix?: string;
+  light?: boolean;
 }
 
 function easeOutExpo(t: number): number {
   return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
 }
 
-export default function StatBlock({ value, label, isText, suffix = '' }: Props) {
+export default function StatBlock({ value, label, isText, suffix = '', light }: Props) {
   const [display, setDisplay] = useState('0');
   const [started, setStarted] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+
+  const textColor = light ? 'text-white' : 'text-[var(--dark)]';
+  const labelColor = light ? 'text-white/60' : 'text-[var(--muted)]';
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -60,10 +64,10 @@ export default function StatBlock({ value, label, isText, suffix = '' }: Props) 
         viewport={{ once: true }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       >
-        <p className="font-display text-[28px] md:text-[36px] font-normal text-[var(--accent-light)]">
+        <p className={`font-display text-[26px] md:text-[32px] font-normal ${textColor}`}>
           {value}
         </p>
-        <p className="font-body text-[11px] font-normal uppercase tracking-[0.12em] text-[var(--muted)] mt-4">
+        <p className={`font-body text-[10px] font-medium uppercase tracking-[0.16em] ${labelColor} mt-3`}>
           {label}
         </p>
       </motion.div>
@@ -79,10 +83,10 @@ export default function StatBlock({ value, label, isText, suffix = '' }: Props) 
       viewport={{ once: true }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
     >
-      <p className="font-display text-[52px] md:text-[76px] font-light text-[var(--accent-light)] leading-none">
+      <p className={`font-display text-[52px] md:text-[72px] font-normal ${textColor} leading-none`}>
         {started ? display : '0'}{suffix}
       </p>
-      <p className="font-body text-[11px] font-normal uppercase tracking-[0.12em] text-[var(--muted)] mt-4">
+      <p className={`font-body text-[10px] font-medium uppercase tracking-[0.16em] ${labelColor} mt-3`}>
         {label}
       </p>
     </motion.div>

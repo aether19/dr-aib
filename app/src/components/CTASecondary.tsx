@@ -10,7 +10,7 @@ export default function CTASecondary({ children, to, className = '' }: Props) {
   return (
     <Link
       to={to}
-      className={`inline-block font-body text-[13px] font-normal text-[var(--dark)] border-b border-[var(--dark)] pb-1 hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors duration-200 ${className}`}
+      className={`inline-flex items-center gap-2 font-body text-[11px] font-medium uppercase tracking-[0.14em] text-[var(--dark)] border border-[var(--dark)] px-7 py-3.5 hover:bg-[var(--dark)] hover:text-white transition-all duration-300 ${className}`}
     >
       {children}
     </Link>

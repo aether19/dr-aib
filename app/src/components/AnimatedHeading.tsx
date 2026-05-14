@@ -17,7 +17,7 @@ interface Props {
 
 const sizeClasses = {
   hero: 'text-[44px] md:text-[88px] leading-[1.05]',
-  section: 'text-[36px] md:text-[56px] leading-[1.1]',
+  section: 'text-[36px] md:text-[54px] leading-[1.1]',
   page: 'text-[40px] md:text-[64px] leading-[1.05]',
 };
 
@@ -34,7 +34,7 @@ export default function AnimatedHeading({
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.12,
+        staggerChildren: 0.1,
         delayChildren: delay,
       },
     },
@@ -45,7 +45,7 @@ export default function AnimatedHeading({
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+      transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
     },
   };
 
@@ -69,7 +69,7 @@ export default function AnimatedHeading({
       className={centered ? 'text-center' : ''}
     >
       <Tag
-        className={`font-display font-light tracking-[-0.025em] ${sizeClasses[size]} ${className}`}
+        className={`font-display font-normal tracking-[-0.02em] ${sizeClasses[size]} ${className}`}
         style={{ color: light ? 'var(--white)' : 'var(--dark)' }}
       >
         {lines.map((line, i) => (
