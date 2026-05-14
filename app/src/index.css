@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@200;300;400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #F4EFE8;
+    --bg-alt: #EDE5D8;
+    --dark: #14110D;
+    --dark-2: #1F1B15;
+    --accent: #B07840;
+    --accent-light: #C9975C;
+    --muted: #8A7D6E;
+    --white: #FDFAF6;
+    --line: #DDD3C4;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  * {
+    @apply border-[var(--line)];
+  }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    background-color: var(--bg);
+    color: var(--dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  input, textarea, select {
+    font-family: inherit;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-body {
+    font-family: 'Jost', sans-serif;
+  }
+
+  .text-bronze {
+    color: var(--accent);
+  }
+
+  .text-bronze-light {
+    color: var(--accent-light);
+  }
+
+  .text-taupe {
+    color: var(--muted);
+  }
+
+  .text-cream {
+    color: var(--white);
+  }
+
+  .bg-lin {
+    background-color: var(--bg);
+  }
+
+  .bg-sand {
+    background-color: var(--bg-alt);
+  }
+
+  .bg-ink {
+    background-color: var(--dark);
+  }
+
+  .bg-charcoal {
+    background-color: var(--dark-2);
+  }
+
+  .bg-cream {
+    background-color: var(--white);
+  }
+
+  .border-rule {
+    border-color: var(--line);
+  }
+
+  .supertitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+  }
+
+  .label-text {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+
+  .nav-link {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .placeholder-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+}
+
+@layer utilities {
+  .writing-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+/* Scroll indicator animation */
+@keyframes scrollPulse {
+  0%, 100% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--accent);
+  color: var(--white);
+}
