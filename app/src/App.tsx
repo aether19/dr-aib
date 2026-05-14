@@ -7,6 +7,7 @@ import DoctorPage from './pages/DoctorPage';
 import ProcedurePage from './pages/ProcedurePage';
 import ContactPage from './pages/ContactPage';
 import BookingPage from './pages/BookingPage';
+import DiscoverServicesPage from './pages/DiscoverServicesPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -23,6 +24,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/docteur" element={<DoctorPage />} />
+          <Route path="/decouvrir-les-soins" element={<DiscoverServicesPage />} />
           <Route path="/chirurgie/:slug" element={<ProcedurePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/booking" element={<BookingPage />} />
