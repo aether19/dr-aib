@@ -235,7 +235,7 @@ export default function DoctorPage() {
                   src={
                     i === 0
                       ? 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=90'
-                      : 'https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=800&q=90'
+                      : 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=90'
                   }
                   alt={item.label}
                   className="w-full h-[240px] object-cover object-center"
