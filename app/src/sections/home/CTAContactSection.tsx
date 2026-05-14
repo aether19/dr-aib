@@ -12,7 +12,8 @@ export default function CTAContactSection() {
           alt="Clinique Dr. Aib Amar — Alger"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-[var(--accent)]/95" />
+        <div className="absolute inset-0 bg-black/80" />
+        <div className="absolute inset-0 bg-[var(--accent)]/70" />
       </div>
 
       <div className="relative z-10 py-24 md:py-32 px-6 md:px-12">

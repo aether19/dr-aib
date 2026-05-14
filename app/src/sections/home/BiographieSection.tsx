@@ -6,7 +6,7 @@ import CTASecondary from '../../components/CTASecondary';
 const badges = ["SOFCPRE", "PARIS VIII", "13 ANS D'EXPÉRIENCE"];
 
 const PORTRAIT_URL =
-  'https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F43d4d089f46443e0b478f4d4b09a9770?format=webp&width=1200';
+  'https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F89ff04989b904cbba2a62fa76ce7b4e0?format=webp&width=1200';
 
 export default function BiographieSection() {
   return (
@@ -17,7 +17,7 @@ export default function BiographieSection() {
           <img
             src={PORTRAIT_URL}
             alt="Dr. Aib Amar — Chirurgien Plasticien"
-            className="w-full h-full object-cover object-top min-h-[480px] lg:min-h-[640px]"
+            className="w-full h-full object-cover object-center min-h-[480px] lg:min-h-[640px]"
             style={{
               filter: 'contrast(1.08) brightness(1.04) saturate(0.95)',
               imageRendering: 'auto',

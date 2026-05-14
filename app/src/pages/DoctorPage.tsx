@@ -94,7 +94,7 @@ export default function DoctorPage() {
           </ScrollReveal>
           <ScrollReveal direction="right" distance={30} duration={0.9} delay={0.15} className="min-h-[300px] lg:min-h-[500px]">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F43d4d089f46443e0b478f4d4b09a9770?format=webp&width=1200"
+              src="https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F89ff04989b904cbba2a62fa76ce7b4e0?format=webp&width=1200"
               alt="Dr. Aib Amar"
               className="w-full h-full object-cover object-center min-h-[300px] lg:min-h-[500px]"
             />

@@ -1,281 +1,220 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import SectionSupertitle from '../components/SectionSupertitle';
 import AnimatedHeading from '../components/AnimatedHeading';
 import ScrollReveal from '../components/ScrollReveal';
 
-
-const interventionOptions = [
-  'Sélectionnez...',
-  'Prothèse Mammaire',
-  'Réduction Mammaire',
-  'Remonter les seins',
-  'Liposuccion',
-  'Gynécomastie',
-  'Abdominoplastie',
-  'Silhouette Lift',
-  'Reconstruction Plastique',
-  'Rhinoplastie',
-  'Oreilles Décollées',
-  'Lifting',
-  'Lifting Cervico-Facial',
-  'Blépharoplastie',
-  'Greffe Capillaire',
-  'Botox',
-  'Acide Hyaluronique',
-  'Peeling',
-  'Cernes',
-  'Microdermabrasion',
-  'Soins Après Chirurgie',
-  'Soins Après Grossesse',
-  'Autre',
-];
-
 const schedule = [
-  { day: 'Dimanche — Jeudi', hours: '9h00 — 17h00' },
+  { day: 'Dimanche', hours: '9h00 — 17h00' },
+  { day: 'Lundi', hours: '9h00 — 17h00' },
+  { day: 'Mardi', hours: '9h00 — 17h00' },
+  { day: 'Mercredi', hours: '9h00 — 17h00' },
+  { day: 'Jeudi', hours: '9h00 — 17h00' },
   { day: 'Vendredi', hours: 'Fermé' },
   { day: 'Samedi', hours: 'Sur rendez-vous' },
 ];
 
 interface FormData {
   nom: string;
-  prenom: string;
   email: string;
   telephone: string;
-  intervention: string;
+  sujet: string;
   message: string;
 }
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState<FormData>({
-    nom: '',
-    prenom: '',
-    email: '',
-    telephone: '',
-    intervention: '',
-    message: '',
-  });
+  const [form, setForm] = useState<FormData>({ nom: '', email: '', telephone: '', sujet: '', message: '' });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
+    setForm(p => ({ ...p, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+  const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); setSubmitted(true); };
 
-  const inputClass = "w-full bg-transparent border-b border-[var(--line)] py-3.5 font-body text-[16px] font-light text-[var(--dark)] placeholder:text-[var(--muted)] placeholder:opacity-50 focus:border-[var(--accent)] focus:outline-none transition-colors duration-200";
-  const labelClass = "block font-body text-[12px] font-normal uppercase tracking-[0.12em] text-[var(--dark)] mb-2";
+  const iCls = "w-full bg-transparent border-b border-[var(--line)] py-3.5 font-body text-[15px] font-light text-[var(--dark)] placeholder:text-[var(--muted)]/50 focus:border-[var(--accent)] focus:outline-none transition-colors duration-200";
+  const lCls = "block font-body text-[11px] font-medium uppercase tracking-[0.14em] text-[var(--dark)] mb-2";
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-[var(--bg-alt)] pt-32 md:pt-40 pb-12 md:pb-16 px-6 md:px-12">
-        <div className="max-w-[720px] mx-auto text-center">
-          <SectionSupertitle>Contact</SectionSupertitle>
-          <AnimatedHeading
-            centered
-            size="page"
-            lines={[
-              { text: 'Prenons' },
-              { text: 'rendez-vous', italicWord: 'rendez-vous' },
-            ]}
-          />
-          <ScrollReveal delay={0.3}>
-            <p className="font-body text-[16px] md:text-[17px] font-light text-[var(--muted)] mt-5 max-w-[480px] mx-auto leading-[1.7]">
-              Le Dr. Aib Amar vous reçoit à Alger pour une consultation personnalisée. Chaque parcours commence par une conversation.
-            </p>
+      {/* ── Hero ── */}
+      <section className="relative overflow-hidden bg-[var(--dark)] pt-[72px]">
+        <div className="absolute inset-0 z-0 opacity-20">
+          <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1600&q=85"
+            alt="" className="w-full h-full object-cover"/>
+        </div>
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 md:px-10 py-20 md:py-28 grid grid-cols-1 lg:grid-cols-2 gap-10 items-end">
+          <div>
+            <SectionSupertitle light>Contact</SectionSupertitle>
+            <AnimatedHeading light size="page"
+              lines={[{ text: 'Parlons de' }, { text: 'votre projet', italicWord: 'votre projet' }]}/>
+            <ScrollReveal delay={0.3}>
+              <p className="font-body text-[16px] font-light text-white/65 mt-5 max-w-[440px] leading-[1.75]">
+                Le Dr. Aib Amar vous reçoit à Alger pour une consultation personnalisée et confidentielle.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.4}>
+              <Link to="/booking"
+                className="inline-flex mt-8 items-center font-body text-[11px] font-medium uppercase tracking-[0.14em] bg-[var(--accent)] text-white px-7 py-3.5 hover:bg-white hover:text-[var(--accent)] transition-all duration-300">
+                Prendre rendez-vous →
+              </Link>
+            </ScrollReveal>
+          </div>
+
+          {/* Quick contact info cards */}
+          <ScrollReveal direction="right" distance={30} delay={0.2}>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {[
+                { icon: '📞', label: 'Téléphone', value: '+213 0557 969 174', sub: 'Lun–Jeu, Sam' },
+                { icon: '✉', label: 'Email', value: 'info@chirurgieesthetique-dz.com', sub: 'Réponse sous 24h' },
+                { icon: '📍', label: 'Adresse', value: 'Garidi 2 Bât. 62', sub: 'Kouba, Alger 16000' },
+              ].map((item) => (
+                <div key={item.label} className="bg-white/10 backdrop-blur-sm border border-white/15 p-4">
+                  <p className="text-xl mb-2">{item.icon}</p>
+                  <p className="font-body text-[10px] font-medium uppercase tracking-[0.16em] text-white/55 mb-1">{item.label}</p>
+                  <p className="font-body text-[13px] font-light text-white leading-snug">{item.value}</p>
+                  <p className="font-body text-[11px] text-white/45 mt-0.5">{item.sub}</p>
+                </div>
+              ))}
+            </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Form & Coordonnées */}
-      <section className="bg-[var(--bg)] py-12 md:py-20 px-6 md:px-12">
-        <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-[60%_40%] gap-12 lg:gap-16">
-          {/* Left - Form */}
+      {/* ── Main grid: form + info ── */}
+      <section className="bg-white py-16 md:py-24 px-6 md:px-10">
+        <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-16">
+
+          {/* Left — Contact form */}
           <div>
+            <SectionSupertitle>Formulaire de contact</SectionSupertitle>
+            <h2 className="font-display text-[30px] md:text-[38px] font-normal text-[var(--dark)] mb-10">
+              Envoyez-nous un message
+            </h2>
             <AnimatePresence mode="wait">
               {!submitted ? (
-                <motion.form
-                  key="form"
-                  onSubmit={handleSubmit}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="max-w-[640px] space-y-7"
-                >
+                <motion.form key="form" onSubmit={handleSubmit} initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className="space-y-7 max-w-[560px]">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-7">
-                    <ScrollReveal delay={0}>
-                      <label className={labelClass}>NOM</label>
-                      <input
-                        type="text"
-                        name="nom"
-                        value={form.nom}
-                        onChange={handleChange}
-                        placeholder="Votre nom"
-                        required
-                        className={inputClass}
-                      />
-                    </ScrollReveal>
-                    <ScrollReveal delay={0.06}>
-                      <label className={labelClass}>PRÉNOM</label>
-                      <input
-                        type="text"
-                        name="prenom"
-                        value={form.prenom}
-                        onChange={handleChange}
-                        placeholder="Votre prénom"
-                        required
-                        className={inputClass}
-                      />
-                    </ScrollReveal>
+                    <div>
+                      <label className={lCls}>Nom complet</label>
+                      <input type="text" name="nom" value={form.nom} onChange={handleChange}
+                        placeholder="Votre nom" required className={iCls}/>
+                    </div>
+                    <div>
+                      <label className={lCls}>Téléphone</label>
+                      <input type="tel" name="telephone" value={form.telephone} onChange={handleChange}
+                        placeholder="+213..." className={iCls}/>
+                    </div>
                   </div>
-
-                  <ScrollReveal delay={0.12}>
-                    <label className={labelClass}>EMAIL</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={form.email}
-                      onChange={handleChange}
-                      placeholder="votre@email.com"
-                      required
-                      className={inputClass}
-                    />
-                  </ScrollReveal>
-
-                  <ScrollReveal delay={0.18}>
-                    <label className={labelClass}>TÉLÉPHONE</label>
-                    <input
-                      type="tel"
-                      name="telephone"
-                      value={form.telephone}
-                      onChange={handleChange}
-                      placeholder="+213..."
-                      required
-                      className={inputClass}
-                    />
-                  </ScrollReveal>
-
-                  <ScrollReveal delay={0.24}>
-                    <label className={labelClass}>TYPE D'INTERVENTION</label>
-                    <select
-                      name="intervention"
-                      value={form.intervention}
-                      onChange={handleChange}
-                      className={`${inputClass} appearance-none cursor-pointer`}
-                    >
-                      {interventionOptions.map((opt) => (
-                        <option key={opt} value={opt === 'Sélectionnez...' ? '' : opt}>
-                          {opt}
-                        </option>
-                      ))}
+                  <div>
+                    <label className={lCls}>Email</label>
+                    <input type="email" name="email" value={form.email} onChange={handleChange}
+                      placeholder="votre@email.com" required className={iCls}/>
+                  </div>
+                  <div>
+                    <label className={lCls}>Sujet</label>
+                    <select name="sujet" value={form.sujet} onChange={handleChange} className={`${iCls} appearance-none cursor-pointer`}>
+                      <option value="">Sélectionnez un sujet...</option>
+                      <option>Demande de renseignements</option>
+                      <option>Rhinoplastie</option>
+                      <option>Prothèse Mammaire</option>
+                      <option>Liposuccion</option>
+                      <option>Botox / Acide Hyaluronique</option>
+                      <option>Lifting</option>
+                      <option>Greffe Capillaire</option>
+                      <option>Autre intervention</option>
                     </select>
-                  </ScrollReveal>
-
-                  <ScrollReveal delay={0.3}>
-                    <label className={labelClass}>MESSAGE</label>
-                    <textarea
-                      name="message"
-                      value={form.message}
-                      onChange={handleChange}
-                      placeholder="Décrivez votre demande ou posez vos questions..."
-                      rows={5}
-                      required
-                      className={`${inputClass} resize-none`}
-                    />
-                  </ScrollReveal>
-
-                  <ScrollReveal delay={0.36}>
-                    <button
-                      type="submit"
-                      className="w-full max-w-[640px] bg-[var(--accent)] text-[var(--white)] font-body text-[13px] font-normal uppercase tracking-[0.12em] py-[18px] hover:bg-[var(--accent-light)] transition-colors duration-300 mt-3"
-                    >
-                      Envoyer la demande
-                    </button>
-                  </ScrollReveal>
+                  </div>
+                  <div>
+                    <label className={lCls}>Message</label>
+                    <textarea name="message" value={form.message} onChange={handleChange}
+                      placeholder="Décrivez votre demande ou posez vos questions..." rows={5} required
+                      className={`${iCls} resize-none`}/>
+                  </div>
+                  <button type="submit"
+                    className="w-full max-w-[560px] bg-[var(--accent)] text-white font-body text-[12px] font-medium uppercase tracking-[0.14em] py-4 hover:bg-[var(--dark)] transition-colors duration-300">
+                    Envoyer le message
+                  </button>
                 </motion.form>
               ) : (
-                <motion.div
-                  key="success"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="max-w-[400px] mx-auto text-center py-20"
-                >
-                  <div className="w-12 h-12 rounded-full border border-[var(--accent)] flex items-center justify-center mx-auto">
-                    <span className="font-display text-[24px] font-light text-[var(--accent)]">&#10003;</span>
+                <motion.div key="success" initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.5}}
+                  className="max-w-[400px] py-12">
+                  <div className="w-12 h-12 rounded-full border-2 border-[var(--accent)] flex items-center justify-center mb-6">
+                    <span className="font-display text-[22px] text-[var(--accent)]">✓</span>
                   </div>
-                  <h3 className="font-display text-[28px] md:text-[32px] font-light text-[var(--dark)] mt-6">
-                    Merci pour votre message
-                  </h3>
-                  <p className="font-body text-[16px] font-light text-[var(--muted)] mt-3">
-                    Nous vous recontactons dans les plus brefs délais pour confirmer votre rendez-vous.
+                  <h3 className="font-display text-[28px] font-normal text-[var(--dark)] mb-3">Message envoyé</h3>
+                  <p className="font-body text-[15px] font-light text-[var(--muted)] leading-[1.75]">
+                    Merci pour votre message. Nous vous répondrons dans les plus brefs délais.
                   </p>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
 
-          {/* Right - Coordonnées */}
-          <ScrollReveal direction="right" distance={30} duration={0.8} className="lg:border-l lg:border-[var(--line)] lg:border-opacity-60 lg:pl-12">
-            <div className="space-y-10">
-              {/* Contact */}
-              <div>
-                <SectionSupertitle>Contact</SectionSupertitle>
-                <div className="mt-5 space-y-5">
-                  <div>
-                    <p className="font-body text-[11px] font-normal uppercase tracking-[0.12em] text-[var(--muted)]">Téléphone</p>
-                    <p className="font-body text-[18px] md:text-[20px] font-light text-[var(--dark)] mt-1.5">+213 0557 969 174</p>
+          {/* Right — Info panel */}
+          <ScrollReveal direction="right" distance={24} duration={0.8}>
+            <div className="space-y-0 border border-[var(--line)]">
+              {/* Cabinet */}
+              <div className="p-6 border-b border-[var(--line)]">
+                <p className="font-body text-[10px] font-medium uppercase tracking-[0.18em] text-[var(--accent)] mb-4">Cabinet</p>
+                <p className="font-display text-[22px] font-normal text-[var(--dark)] mb-1">Dr. Aib Amar</p>
+                <p className="font-body text-[13px] font-light text-[var(--muted)]">Chirurgie Plastique & Esthétique</p>
+                <div className="mt-5 space-y-3">
+                  <div className="flex items-start gap-3">
+                    <span className="text-[var(--accent)] mt-0.5">📍</span>
+                    <p className="font-body text-[14px] font-light text-[var(--dark)]">Garidi 2 Bâtiment 62<br/>Kouba, Alger 16000</p>
                   </div>
-                  <div>
-                    <p className="font-body text-[11px] font-normal uppercase tracking-[0.12em] text-[var(--muted)]">Email</p>
-                    <p className="font-body text-[18px] md:text-[20px] font-light text-[var(--dark)] mt-1.5">info@chirurgieesthetique-dz.com</p>
+                  <div className="flex items-center gap-3">
+                    <span className="text-[var(--accent)]">📞</span>
+                    <p className="font-body text-[14px] font-light text-[var(--dark)]">+213 0557 969 174</p>
                   </div>
-                  <div>
-                    <p className="font-body text-[11px] font-normal uppercase tracking-[0.12em] text-[var(--muted)]">Adresse</p>
-                    <p className="font-body text-[18px] md:text-[20px] font-light text-[var(--dark)] mt-1.5">Garidi 2 Bât. 62, Kouba, Alger 16000</p>
+                  <div className="flex items-start gap-3">
+                    <span className="text-[var(--accent)] mt-0.5">✉</span>
+                    <p className="font-body text-[13px] font-light text-[var(--dark)] break-all">info@chirurgieesthetique-dz.com</p>
                   </div>
                 </div>
-              </div>
-
-              {/* Map */}
-              <div className="pt-8 border-t border-[var(--line)]">
-                <SectionSupertitle>Localisation</SectionSupertitle>
-                <div className="w-full mt-5 overflow-hidden rounded-sm border border-[var(--line)]" style={{height: '280px'}}>
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.123456789!2d3.0711!3d36.7325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128fb26b3ff3d59d%3A0x0!2sGaridi+2%2C+Kouba%2C+Alger!5e0!3m2!1sfr!2sdz!4v1700000000000!5m2!1sfr!2sdz"
-                    width="100%"
-                    height="100%"
-                    style={{border: 0}}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Localisation Dr. Aib Amar"
-                  />
-                </div>
-                <p className="font-body text-[13px] font-light text-[var(--muted)] mt-4">
-                  Garidi 2 Bâtiment 62, Kouba, Alger 16000 — accessible en voiture et transport en commun.
-                </p>
               </div>
 
               {/* Horaires */}
-              <div className="pt-8 border-t border-[var(--line)]">
-                <SectionSupertitle>Horaires</SectionSupertitle>
-                <div className="mt-5 space-y-0">
-                  {schedule.map((row, i) => (
-                    <div key={i} className="flex justify-between py-2.5 border-b border-[var(--line)] border-opacity-40">
-                      <span className="font-body text-[14px] font-light text-[var(--dark)]">{row.day}</span>
-                      <span className="font-body text-[14px] font-light text-[var(--muted)]">{row.hours}</span>
+              <div className="p-6 border-b border-[var(--line)]">
+                <p className="font-body text-[10px] font-medium uppercase tracking-[0.18em] text-[var(--accent)] mb-4">Horaires</p>
+                <div className="space-y-0">
+                  {schedule.map((row) => (
+                    <div key={row.day} className={`flex justify-between py-2 border-b border-[var(--line)] last:border-0 ${row.hours==='Fermé' ? 'opacity-40' : ''}`}>
+                      <span className="font-body text-[13px] font-light text-[var(--dark)]">{row.day}</span>
+                      <span className={`font-body text-[13px] font-light ${row.hours==='Fermé' ? 'text-red-400' : 'text-[var(--muted)]'}`}>{row.hours}</span>
                     </div>
                   ))}
                 </div>
               </div>
+
+              {/* RDV CTA */}
+              <div className="p-6 bg-[var(--accent)]">
+                <p className="font-body text-[11px] font-medium uppercase tracking-[0.14em] text-white/70 mb-2">Rendez-vous</p>
+                <p className="font-display text-[19px] font-normal text-white mb-4">Prêt à consulter ?</p>
+                <Link to="/booking"
+                  className="inline-flex items-center font-body text-[11px] font-medium uppercase tracking-[0.12em] bg-white text-[var(--accent)] px-5 py-2.5 hover:bg-[var(--dark)] hover:text-white transition-all duration-250">
+                  Réserver un créneau →
+                </Link>
+              </div>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ── Map ── */}
+      <section className="bg-[var(--bg-alt)] px-6 md:px-10 py-12">
+        <div className="max-w-[1280px] mx-auto">
+          <p className="font-body text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--accent)] mb-3">Localisation</p>
+          <h3 className="font-display text-[24px] font-normal text-[var(--dark)] mb-6">
+            Garidi 2 Bâtiment 62, Kouba, Alger
+          </h3>
+          <div className="w-full overflow-hidden border border-[var(--line)]" style={{ height: '380px' }}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.123456789!2d3.0711!3d36.7325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128fb26b3ff3d59d%3A0x0!2sGaridi+2%2C+Kouba%2C+Alger!5e0!3m2!1sfr!2sdz!4v1700000000000!5m2!1sfr!2sdz"
+              width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade" title="Cabinet Dr. Aib Amar"/>
+          </div>
         </div>
       </section>
     </>
