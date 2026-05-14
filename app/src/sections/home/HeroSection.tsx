@@ -74,7 +74,7 @@ export default function HeroSection() {
         >
           <CTAPrimary to="/chirurgie/prothese-mammaire" inverted>Découvrir les soins</CTAPrimary>
           <Link
-            to="/contact"
+            to="/booking"
             className="inline-flex items-center justify-center font-body text-[11px] font-medium uppercase tracking-[0.14em] text-white border border-white/40 px-7 py-4 hover:bg-white hover:text-[var(--dark)] transition-all duration-300"
           >
             Prendre rendez-vous

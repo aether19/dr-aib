@@ -5,20 +5,29 @@ import CTASecondary from '../../components/CTASecondary';
 
 const badges = ["SOFCPRE", "PARIS VIII", "13 ANS D'EXPÉRIENCE"];
 
+const PORTRAIT_URL =
+  'https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F43d4d089f46443e0b478f4d4b09a9770?format=webp&width=1200';
+
 export default function BiographieSection() {
   return (
     <section className="bg-[var(--bg)]">
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2">
-        {/* Left - Doctor portrait */}
-        <ScrollReveal direction="left" distance={30} duration={0.9} className="min-h-[420px] lg:min-h-[620px] overflow-hidden">
+        {/* Left — HD doctor portrait */}
+        <ScrollReveal direction="left" distance={30} duration={0.9} className="min-h-[480px] lg:min-h-[640px] overflow-hidden">
           <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F43d4d089f46443e0b478f4d4b09a9770?format=webp&width=800&height=1200"
-            alt="Dr. Aib Amar — Portrait"
-            className="w-full h-full object-cover object-center min-h-[420px] lg:min-h-[620px]"
+            src={PORTRAIT_URL}
+            alt="Dr. Aib Amar — Chirurgien Plasticien"
+            className="w-full h-full object-cover object-top min-h-[480px] lg:min-h-[640px]"
+            style={{
+              filter: 'contrast(1.08) brightness(1.04) saturate(0.95)',
+              imageRendering: 'auto',
+            }}
+            loading="eager"
+            decoding="sync"
           />
         </ScrollReveal>
 
-        {/* Right - Text */}
+        {/* Right — Text */}
         <ScrollReveal
           direction="right"
           distance={30}

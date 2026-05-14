@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import ImagePlaceholder from './ImagePlaceholder';
+import { getProcedureImage } from '../data/procedureImages';
 
 interface Props {
   title: string;
@@ -9,19 +9,26 @@ interface Props {
 }
 
 export default function ServiceCard({ title, tag, imageLabel, slug }: Props) {
+  const imgSrc = getProcedureImage(slug);
   return (
     <Link
       to={`/chirurgie/${slug}`}
-      className="group block bg-[var(--bg)] p-6 md:p-8 transition-colors duration-300 hover:bg-[var(--white)] border-r border-[var(--line)] last:border-r-0"
+      className="group block bg-white overflow-hidden border border-[var(--line)] hover:border-[var(--accent)] hover:shadow-lg transition-all duration-300"
     >
-      <ImagePlaceholder label={imageLabel} aspect="16/9" className="w-full h-[180px] mb-5" />
-      <p className="supertitle text-[9px] tracking-[0.12em] mb-3">{tag}</p>
-      <h3 className="font-display text-[20px] md:text-[22px] font-normal text-[var(--dark)] leading-tight">
-        {title}
-      </h3>
-      <span className="inline-block mt-4 text-[var(--muted)] group-hover:text-[var(--accent)] transition-all duration-200 group-hover:translate-x-1 group-hover:-translate-y-1">
-        &#8599;
-      </span>
+      <div className="overflow-hidden h-48">
+        <img
+          src={imgSrc}
+          alt={imageLabel}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+      <div className="p-5">
+        <p className="font-body text-[9px] font-medium uppercase tracking-[0.18em] text-[var(--accent)] mb-2">{tag}</p>
+        <h3 className="font-display text-[19px] font-normal text-[var(--dark)] leading-snug">{title}</h3>
+        <span className="inline-flex items-center gap-1 mt-3 font-body text-[11px] font-medium text-[var(--muted)] group-hover:text-[var(--accent)] transition-colors duration-200 uppercase tracking-[0.08em]">
+          En savoir plus <span className="text-base">→</span>
+        </span>
+      </div>
     </Link>
   );
 }

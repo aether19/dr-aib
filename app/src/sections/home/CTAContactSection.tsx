@@ -12,7 +12,7 @@ export default function CTAContactSection() {
           alt="Clinique Dr. Aib Amar — Alger"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-[var(--accent)]/88" />
+        <div className="absolute inset-0 bg-[var(--accent)]/95" />
       </div>
 
       <div className="relative z-10 py-24 md:py-32 px-6 md:px-12">
@@ -41,7 +41,7 @@ export default function CTAContactSection() {
 
           <ScrollReveal delay={0.3}>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <CTAPrimary to="/contact" className="bg-white !text-[var(--accent)] hover:bg-[var(--dark)] hover:!text-white">
+              <CTAPrimary to="/booking" className="bg-white !text-[var(--accent)] hover:bg-[var(--dark)] hover:!text-white">
                 Prendre rendez-vous
               </CTAPrimary>
             </div>

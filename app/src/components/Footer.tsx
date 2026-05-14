@@ -55,7 +55,7 @@ export default function Footer() {
             </div>
             <div className="mt-8">
               <Link
-                to="/contact"
+                to="/booking"
                 className="inline-block font-body text-[11px] font-medium uppercase tracking-[0.12em] text-white border border-[var(--accent)] bg-[var(--accent)] px-6 py-3 hover:bg-transparent transition-colors duration-300"
               >
                 Prendre RDV
