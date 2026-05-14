@@ -124,7 +124,7 @@ export default function ProcedurePage() {
               <img
                 src={introImage}
                 alt={procedure.title}
-                className="w-full h-[400px] md:h-[500px] object-contain"
+                className="w-full h-[400px] md:h-[500px] object-cover object-top"
               />
             </div>
           </ScrollReveal>
