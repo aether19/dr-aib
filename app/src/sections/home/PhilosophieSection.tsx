@@ -2,7 +2,6 @@ import SectionSupertitle from '../../components/SectionSupertitle';
 import AnimatedHeading from '../../components/AnimatedHeading';
 import ProcedureStep from '../../components/ProcedureStep';
 import ScrollReveal from '../../components/ScrollReveal';
-import ImagePlaceholder from '../../components/ImagePlaceholder';
 
 const steps = [
   { number: '01', title: 'Consultation', description: 'Un échange approfondi pour comprendre vos souhaits et évaluer les possibilités techniques avec le Dr. Aib Amar.' },
@@ -50,18 +49,18 @@ export default function PhilosophieSection() {
           ))}
         </ScrollReveal>
 
-        {/* Right — Image */}
+        {/* Right — Real clinic/OR image */}
         <ScrollReveal
           direction="right"
           distance={20}
           duration={0.8}
           delay={0.1}
-          className="min-h-[400px] lg:min-h-0 order-1 lg:order-2"
+          className="min-h-[400px] lg:min-h-0 order-1 lg:order-2 overflow-hidden"
         >
-          <ImagePlaceholder
-            label="Salle d'opération — Dr. Aib Amar"
-            aspect="auto"
-            className="w-full h-full min-h-[400px]"
+          <img
+            src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=900&q=85"
+            alt="Bloc opératoire — Dr. Aib Amar"
+            className="w-full h-full object-cover min-h-[400px]"
           />
         </ScrollReveal>
       </div>

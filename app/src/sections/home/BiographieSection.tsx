@@ -2,20 +2,19 @@ import SectionSupertitle from '../../components/SectionSupertitle';
 import AnimatedHeading from '../../components/AnimatedHeading';
 import ScrollReveal from '../../components/ScrollReveal';
 import CTASecondary from '../../components/CTASecondary';
-import ImagePlaceholder from '../../components/ImagePlaceholder';
 
-const badges = ['SOFCPRE', 'PARIS VIII', '13 ANS D\'EXPÉRIENCE'];
+const badges = ["SOFCPRE", "PARIS VIII", "13 ANS D'EXPÉRIENCE"];
 
 export default function BiographieSection() {
   return (
     <section className="bg-[var(--bg)]">
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2">
-        {/* Left - Image */}
-        <ScrollReveal direction="left" distance={30} duration={0.9} className="min-h-[420px] lg:min-h-[620px]">
-          <ImagePlaceholder
-            label="Dr. Aib Amar — Portrait Professionnel"
-            aspect="auto"
-            className="w-full h-full min-h-[420px] lg:min-h-[620px]"
+        {/* Left - Doctor portrait */}
+        <ScrollReveal direction="left" distance={30} duration={0.9} className="min-h-[420px] lg:min-h-[620px] overflow-hidden">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F43d4d089f46443e0b478f4d4b09a9770?format=webp&width=800&height=1200"
+            alt="Dr. Aib Amar — Portrait"
+            className="w-full h-full object-cover object-center min-h-[420px] lg:min-h-[620px]"
           />
         </ScrollReveal>
 

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SectionSupertitle from '../components/SectionSupertitle';
 import AnimatedHeading from '../components/AnimatedHeading';
 import ScrollReveal from '../components/ScrollReveal';
-import ImagePlaceholder from '../components/ImagePlaceholder';
+
 
 const interventionOptions = [
   'Sélectionnez...',
@@ -85,7 +85,7 @@ export default function ContactPage() {
           />
           <ScrollReveal delay={0.3}>
             <p className="font-body text-[16px] md:text-[17px] font-light text-[var(--muted)] mt-5 max-w-[480px] mx-auto leading-[1.7]">
-              Le Dr. Aib Amar vous reçoit à Annaba pour une consultation personnalisée. Chaque parcours commence par une conversation.
+              Le Dr. Aib Amar vous reçoit à Alger pour une consultation personnalisée. Chaque parcours commence par une conversation.
             </p>
           </ScrollReveal>
         </div>
@@ -237,7 +237,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-body text-[11px] font-normal uppercase tracking-[0.12em] text-[var(--muted)]">Adresse</p>
-                    <p className="font-body text-[18px] md:text-[20px] font-light text-[var(--dark)] mt-1.5">Annaba, Algérie</p>
+                    <p className="font-body text-[18px] md:text-[20px] font-light text-[var(--dark)] mt-1.5">Garidi 2 Bât. 62, Kouba, Alger 16000</p>
                   </div>
                 </div>
               </div>
@@ -245,9 +245,20 @@ export default function ContactPage() {
               {/* Map */}
               <div className="pt-8 border-t border-[var(--line)]">
                 <SectionSupertitle>Localisation</SectionSupertitle>
-                <ImagePlaceholder label="Carte — Annaba, Algérie" aspect="4/3" className="w-full mt-5" />
+                <div className="w-full mt-5 overflow-hidden rounded-sm border border-[var(--line)]" style={{height: '280px'}}>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.123456789!2d3.0711!3d36.7325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128fb26b3ff3d59d%3A0x0!2sGaridi+2%2C+Kouba%2C+Alger!5e0!3m2!1sfr!2sdz!4v1700000000000!5m2!1sfr!2sdz"
+                    width="100%"
+                    height="100%"
+                    style={{border: 0}}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Localisation Dr. Aib Amar"
+                  />
+                </div>
                 <p className="font-body text-[13px] font-light text-[var(--muted)] mt-4">
-                  Le cabinet est situé dans le centre-ville d'Annaba, accessible en voiture et transport en commun.
+                  Garidi 2 Bâtiment 62, Kouba, Alger 16000 — accessible en voiture et transport en commun.
                 </p>
               </div>
 

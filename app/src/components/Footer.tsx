@@ -50,7 +50,7 @@ export default function Footer() {
                 info@chirurgieesthetique-dz.com
               </p>
               <p className="font-body text-[13px] font-light text-white/60">
-                Annaba, Algérie
+                Alger, Algérie
               </p>
             </div>
             <div className="mt-8">
@@ -128,7 +128,7 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} Dr. Aib Amar. Tous droits réservés.
         </p>
         <p className="font-body text-[11px] font-light text-white/35">
-          Membre de la SOFCPRE · Paris VIII · Annaba
+          Membre de la SOFCPRE · Paris VIII · Alger
         </p>
       </div>
     </footer>

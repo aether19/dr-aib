@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SectionSupertitle from '../components/SectionSupertitle';
 import AnimatedHeading from '../components/AnimatedHeading';
 import ScrollReveal from '../components/ScrollReveal';
-import ImagePlaceholder from '../components/ImagePlaceholder';
+
 
 const tabData = {
   biographie: {
@@ -43,7 +43,7 @@ const mediaItems = [
   },
   {
     title: 'El Moudjahid',
-    quote: "Un retour d'expérience parisien au service de la chirurgie esthétique algérienne. Le Dr. Aib Amar apporte son expertise à Annaba.",
+    quote: "Un retour d'expérience parisien au service de la chirurgie esthétique algérienne. Le Dr. Aib Amar apporte son expertise à Alger.",
     tag: 'PRESSE',
     label: "Article El Moudjahid — Presse Algérienne",
   },
@@ -93,14 +93,22 @@ export default function DoctorPage() {
             </div>
           </ScrollReveal>
           <ScrollReveal direction="right" distance={30} duration={0.9} delay={0.15} className="min-h-[300px] lg:min-h-[500px]">
-            <ImagePlaceholder label="Dr. Aib Amar — Paris VIII" aspect="auto" className="w-full h-full min-h-[300px] lg:min-h-[500px]" />
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F43d4d089f46443e0b478f4d4b09a9770?format=webp&width=800&height=1200"
+              alt="Dr. Aib Amar"
+              className="w-full h-full object-cover object-center min-h-[300px] lg:min-h-[500px]"
+            />
           </ScrollReveal>
         </div>
 
         {/* Algeria - reversed */}
         <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-[45%_55%] border-t border-[var(--line)] border-opacity-50">
           <ScrollReveal direction="left" distance={30} duration={0.9} className="min-h-[280px] lg:min-h-[400px] order-2 lg:order-1">
-            <ImagePlaceholder label="Cabinet Annaba — Algérie" aspect="auto" className="w-full h-full min-h-[280px] lg:min-h-[400px]" />
+            <img
+              src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=900&q=85"
+              alt="Cabinet Dr. Aib Amar — Alger"
+              className="w-full h-full object-cover object-center min-h-[280px] lg:min-h-[400px]"
+            />
           </ScrollReveal>
           <ScrollReveal direction="right" distance={30} duration={0.9} delay={0.15} className="px-6 md:px-12 lg:px-16 py-16 md:py-24 flex flex-col justify-center order-1 lg:order-2">
             <AnimatedHeading
@@ -112,7 +120,7 @@ export default function DoctorPage() {
             />
             <div className="mt-7 space-y-5">
               <p className="font-body text-[16px] font-light text-[var(--dark)] opacity-75 leading-[1.8]">
-                De retour en Algérie, le Dr. Aib Amar a ouvert son cabinet à Annaba avec une mission claire : offrir aux Algériens une chirurgie esthétique d'excellence, sans nécessiter de se rendre à l'étranger.
+                De retour en Algérie, le Dr. Aib Amar a ouvert son cabinet à Alger avec une mission claire : offrir aux Algériens une chirurgie esthétique d'excellence, sans nécessiter de se rendre à l'étranger.
               </p>
               <p className="font-body text-[16px] font-light text-[var(--dark)] opacity-75 leading-[1.8]">
                 Son approche allie la rigueur technique acquise à Paris à une compréhension profonde des attentes et des spécificités de ses patients algériens. Chaque intervention est pensée dans son contexte, pour un résultat naturel et harmonieux.
@@ -204,7 +212,7 @@ export default function DoctorPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
             {mediaItems.map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.15}>
-                <ImagePlaceholder label={item.label} aspect="16/9" className="w-full max-h-[240px]" />
+                <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80" alt={item.label} className="w-full h-[240px] object-cover" />
                 <h3 className="font-display text-[22px] md:text-[24px] font-normal text-[var(--dark)] mt-5">
                   {item.title}
                 </h3>

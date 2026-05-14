@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CTAPrimary from '../../components/CTAPrimary';
-import ImagePlaceholder from '../../components/ImagePlaceholder';
 
 const heroEasing = [0.16, 1, 0.3, 1] as const;
 
@@ -19,13 +18,13 @@ export default function HeroSection() {
     <section className="relative min-h-[100dvh] flex items-end overflow-hidden">
       {/* Full-bleed background image */}
       <div className="absolute inset-0 z-0">
-        <ImagePlaceholder
-          label="Dr. Aib Amar — Hero Clinique"
-          aspect="auto"
-          className="w-full h-full"
+        <img
+          src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1920&q=85"
+          alt="Clinique Dr. Aib Amar"
+          className="w-full h-full object-cover object-center"
         />
         {/* Dark gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/20" />
       </div>
 
       {/* Content */}
@@ -36,7 +35,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: heroEasing }}
         >
-          Chirurgie Plastique & Esthétique
+          Chirurgie Plastique & Esthétique · Alger
         </motion.p>
 
         <h1 className="font-display font-normal text-white leading-[1.08] tracking-[-0.01em]">
