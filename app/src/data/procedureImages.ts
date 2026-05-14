@@ -30,11 +30,11 @@ export const procedureImages: Record<string, string> = {
   'oreille-decollees':
     `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2Fcc3a96426c0f4a40a37297873723609f?format=webp&width=800`,
   'lifting':
-    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F27576ea936884390aeb395b415376bef?format=webp&width=800`,
+    `https://cdn.builder.io/o/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F1989f0a6a21741fd830ba4c05c9764a4?alt=media&token=4a15e8bf-fac8-427e-aa66-5b6419a27c1d&apiKey=256e4933475b4e70b4bdbc906fdb0009`,
   'lifting-cervico-facial':
     `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F4b209abcbea94ba6b361be0d2b3a5d8a?format=webp&width=800`,
   'blepharoplastie':
-    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F2cad5b791f6a41c48618fc7401999b24?format=webp&width=800`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2Feee978193ca743179d66a683f9ac9e6b?format=webp&width=800`,
 
   // ── Médecine Esthétique — real clinic photos ─────────────────────────────
   'greffe-capilaire':
