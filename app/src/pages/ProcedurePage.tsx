@@ -192,7 +192,7 @@ export default function ProcedurePage() {
             alt={procedure.title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-[var(--accent)]/92" />
+          <div className="absolute inset-0 bg-black/75" />
         </div>
         <div className="relative z-10 py-24 md:py-32 px-6 md:px-12">
           <div className="max-w-[600px] mx-auto text-center">
