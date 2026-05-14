@@ -1,58 +1,56 @@
-// Curated medical-aesthetic images matched to each procedure
-// All from Unsplash – procedure-appropriate, no random photos
+// All images from Pexels — free, no attribution required
+// Selected to match each medical procedure contextually
+
+const PX = (id: number, w = 900) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+
 export const procedureImages: Record<string, string> = {
 
-  // ── Chirurgie du Corps ────────────────────────────────────────
-  'prothese-mammaire':
-    'https://images.unsplash.com/photo-1666214280391-8ff5bd3d9bf4?w=900&q=85',   // woman consultation
-  'reduction-mammaire':
-    'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=900&q=85',       // face/body consult
-  'remonter-seins':
-    'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=85',   // medical measurement
-  'liposuccion':
-    'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=900&q=85',   // medical clinic
-  'gynecomastie':
-    'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=900&q=85',   // medical/bandage
-  'abdominoplastie':
-    'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=900&q=85',      // abdomen/body
-  'silhouette-lift':
-    'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=900&q=85',   // skin/face lift
-  'reconstruction-plastique':
-    'https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=900&q=85',      // OR / surgery
+  // ── Chirurgie du Corps ─────────────────────────────────────────────────────
+  // Breast / mammary procedures — clinic consultation imagery
+  'prothese-mammaire':       PX(5215024),  // aesthetic clinic interior
+  'reduction-mammaire':      PX(3376790),  // modern medical office
+  'remonter-seins':          PX(4386466),  // medical consultation
+  // Body contouring
+  'liposuccion':             PX(3985163),  // body medical measurement
+  'gynecomastie':            PX(6303573),  // clinical examination
+  'abdominoplastie':         PX(4498362),  // abdomen medical
+  'silhouette-lift':         PX(5765872),  // surgical/medical
+  'reconstruction-plastique':PX(3825538),  // operating room
 
-  // ── Chirurgie du Visage ───────────────────────────────────────
-  'rhinoplastie':
-    'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=900&q=85',   // face profile close-up
-  'oreille-decollees':
-    'https://images.unsplash.com/photo-1491349174775-aaaefdd27a97?w=900&q=85',   // ear/side face
-  'lifting':
-    'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=900&q=85',   // facial treatment
-  'lifting-cervico-facial':
-    'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=900&q=85',   // face/neck
-  'blepharoplastie':
-    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=900&q=85',   // eye close-up woman
+  // ── Chirurgie du Visage ────────────────────────────────────────────────────
+  // Nose
+  'rhinoplastie':            PX(2613260),  // woman profile face
+  // Ears
+  'oreille-decollees':       PX(3762875),  // face/ear side view
+  // Face lift procedures
+  'lifting':                 PX(3764119),  // elegant woman face
+  'lifting-cervico-facial':  PX(5938321),  // facial medical procedure
+  // Eyes
+  'blepharoplastie':         PX(1382731),  // eye close-up woman
 
-  // ── Médecine Esthétique ───────────────────────────────────────
-  'greffe-capilaire':
-    'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&q=85',   // hair / scalp
-  'botox':
-    'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=900&q=85',   // syringe / facial injection
-  'acide-hyaluronique':
-    'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=900&q=85',   // facial filler
-  'peeling':
-    'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=85',   // chemical peel skin
-  'cerne':
-    'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=900&q=85',   // eye dark circles
-  'microdermabrasion':
-    'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=900&q=85',   // skin treatment device
-  'apres-chirurgie':
-    'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=900&q=85',   // post-op care
-  'grossesse':
-    'https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=900&q=85',   // maternity/body care
+  // ── Médecine Esthétique ────────────────────────────────────────────────────
+  // Hair
+  'greffe-capilaire':        PX(3771115),  // hair treatment scalp
+  // Injections
+  'botox':                   PX(5938267),  // face injection medical
+  'acide-hyaluronique':      PX(6998458),  // lip/face filler
+  // Skin treatments
+  'peeling':                 PX(3997993),  // chemical peel / skin care
+  'cerne':                   PX(3812854),  // under-eye area
+  'microdermabrasion':       PX(6045028),  // skin treatment device
+  // Post-care
+  'apres-chirurgie':         PX(4386466),  // medical follow-up consultation
+  'grossesse':               PX(1153940),  // maternity / body care
 };
 
-export const fallbackImage =
-  'https://images.unsplash.com/photo-1629909615184-74f495363b67?w=900&q=85';
+export const fallbackImage = PX(3376790, 1920);
 
 export const getProcedureImage = (slug: string): string =>
   procedureImages[slug] ?? fallbackImage;
+
+// Hero / section images (not Unsplash)
+export const HERO_IMAGE     = PX(5215024, 1920); // premium aesthetic clinic
+export const CLINIC_IMAGE   = PX(3376790, 1920); // clinic interior
+export const OR_IMAGE       = PX(3825538, 900);  // operating room
+export const CONSULT_IMAGE  = PX(4386466, 900);  // consultation room

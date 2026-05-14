@@ -7,6 +7,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import ProcedureStep from '../components/ProcedureStep';
 import ServiceCard from '../components/ServiceCard';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 
 export default function ProcedurePage() {
   const { slug } = useParams<{ slug: string }>();
@@ -17,8 +18,29 @@ export default function ProcedurePage() {
   const heroImage = getProcedureImage(procedure.slug);
   const introImage = getProcedureImage(procedure.slug);
 
+  const seoJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": procedure.title,
+    "description": procedure.subtitle,
+    "procedureType": procedure.categoryLabel,
+    "performer": {
+      "@type": "Physician",
+      "name": "Dr. Aib Amar",
+      "address": { "@type": "PostalAddress", "addressLocality": "Alger", "addressCountry": "DZ" }
+    },
+    "url": `https://www.chirurgieesthetique-dz.com/chirurgie/${procedure.slug}`
+  };
+
   return (
     <>
+      <SEO
+        title={`${procedure.title} à Alger`}
+        description={`${procedure.subtitle} Consultation avec le Dr. Aib Amar, chirurgien plasticien à Alger (Kouba). Membre SOFCPRE, 13 ans à Paris VIII.`}
+        canonical={`/chirurgie/${procedure.slug}`}
+        image={getProcedureImage(procedure.slug)}
+        jsonLd={seoJsonLd}
+      />
       {/* 1. Full-bleed hero */}
       <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">

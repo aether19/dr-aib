@@ -1,3 +1,4 @@
+import SEO from '../components/SEO';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SectionSupertitle from '../components/SectionSupertitle';
@@ -54,6 +55,24 @@ export default function DoctorPage() {
 
   return (
     <>
+      <SEO
+        title="Dr. Aib Amar — Chirurgien Plasticien"
+        description="Dr. Aib Amar, chirurgien plasticien diplômé de l'Université d'Alger. 13 ans à Paris VIII, membre SOFCPRE. Expert en rhinoplastie, lifting, liposuccion et médecine esthétique à Alger."
+        canonical="/docteur"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
+          "name": "Dr. Aib Amar — Chirurgien Plasticien à Alger",
+          "url": "https://www.chirurgieesthetique-dz.com/docteur",
+          "mainEntity": {
+            "@type": "Physician",
+            "name": "Dr. Aib Amar",
+            "medicalSpecialty": "PlasticSurgery",
+            "alumniOf": "Université d'Alger",
+            "hasCredential": "Membre SOFCPRE"
+          }
+        }}
+      />
       {/* Hero */}
       <section className="bg-[var(--bg-alt)] pt-32 md:pt-40 pb-16 md:pb-20 px-6 md:px-12">
         <div className="max-w-[720px] mx-auto text-center">
@@ -105,7 +124,7 @@ export default function DoctorPage() {
         <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-[45%_55%] border-t border-[var(--line)] border-opacity-50">
           <ScrollReveal direction="left" distance={30} duration={0.9} className="min-h-[280px] lg:min-h-[400px] order-2 lg:order-1">
             <img
-              src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=900&q=85"
+              src="https://images.pexels.com/photos/3376790/pexels-photo-3376790.jpeg?auto=compress&cs=tinysrgb&w=900"
               alt="Cabinet Dr. Aib Amar — Alger"
               className="w-full h-full object-cover object-center min-h-[280px] lg:min-h-[400px]"
             />
@@ -212,7 +231,7 @@ export default function DoctorPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
             {mediaItems.map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.15}>
-                <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80" alt={item.label} className="w-full h-[240px] object-cover" />
+                <img src="https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=800" alt={item.label} className="w-full h-[240px] object-cover" />
                 <h3 className="font-display text-[22px] md:text-[24px] font-normal text-[var(--dark)] mt-5">
                   {item.title}
                 </h3>

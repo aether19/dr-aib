@@ -1,3 +1,4 @@
+import SEO from '../components/SEO';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -37,10 +38,21 @@ export default function ContactPage() {
 
   return (
     <>
+      <SEO
+        title="Contact — Prendre rendez-vous à Alger"
+        description="Contactez le Dr. Aib Amar pour une consultation en chirurgie esthétique à Alger. Cabinet à Garidi 2, Bâtiment 62, Kouba, Alger 16000. Tél: +213 0557 969 174."
+        canonical="/contact"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact — Dr. Aib Amar",
+          "url": "https://www.chirurgieesthetique-dz.com/contact"
+        }}
+      />
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-[var(--dark)] pt-[72px]">
         <div className="absolute inset-0 z-0 opacity-20">
-          <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1600&q=85"
+          <img src="https://images.pexels.com/photos/3376790/pexels-photo-3376790.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt="" className="w-full h-full object-cover"/>
         </div>
         <div className="relative z-10 max-w-[1280px] mx-auto px-6 md:px-10 py-20 md:py-28 grid grid-cols-1 lg:grid-cols-2 gap-10 items-end">

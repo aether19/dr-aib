@@ -19,7 +19,7 @@ export default function HeroSection() {
       {/* Full-bleed background image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1920&q=85"
+          src="https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=1920"
           alt="Clinique Dr. Aib Amar"
           className="w-full h-full object-cover object-center"
         />

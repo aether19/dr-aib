@@ -1,3 +1,4 @@
+import SEO from '../components/SEO';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -263,6 +264,12 @@ export default function BookingPage() {
 
   return (
     <>
+      <SEO
+        title="Prendre rendez-vous — Consultation Chirurgie Esthétique Alger"
+        description="Réservez votre consultation avec le Dr. Aib Amar à Alger. Choisissez votre intervention, votre créneau et vos coordonnées en quelques clics."
+        canonical="/booking"
+        noIndex={false}
+      />
       {/* Header strip */}
       <section className="bg-white border-b border-[var(--line)] pt-[72px]">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10 py-10">

@@ -65,13 +65,24 @@ const navLinks: NavItem[] = [
 ];
 
 export default function NavigationHeader() {
+  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
+  const isHome = location.pathname === '/';
+
+  useEffect(() => {
+    const check = () => setScrolled(window.scrollY > window.innerHeight - 80);
+    check();
+    window.addEventListener('scroll', check, { passive: true });
+    return () => window.removeEventListener('scroll', check);
+  }, []);
 
   useEffect(() => {
     setMobileOpen(false);
     setActiveDropdown(null);
+    // Re-check scroll on route change (non-home pages start "scrolled")
+    setScrolled(window.scrollY > window.innerHeight - 80);
   }, [location.pathname]);
 
   useEffect(() => {
@@ -79,20 +90,29 @@ export default function NavigationHeader() {
     return () => { document.body.style.overflow = ''; };
   }, [mobileOpen]);
 
+  // Transparent only on home and NOT yet scrolled past hero
+  const transparent = isHome && !scrolled && !mobileOpen;
+
   const isActive = (href?: string) => href === location.pathname;
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-[100] bg-white border-b border-[var(--line)] shadow-[0_1px_12px_rgba(0,0,0,0.06)]">
+      <header
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-400 ${
+          transparent
+            ? 'bg-transparent'
+            : 'bg-white border-b border-[var(--line)] shadow-[0_1px_12px_rgba(0,0,0,0.06)]'
+        }`}
+      >
         <div className="max-w-[1280px] mx-auto flex items-center justify-between h-[72px] px-6 md:px-10">
 
           {/* Logo */}
-          <Link to="/" className="font-display text-[20px] font-normal tracking-wide flex-shrink-0">
-            <span className="text-[var(--dark)]">Dr. Aib</span>{' '}
+          <Link to="/" className="font-display text-[20px] font-normal tracking-wide flex-shrink-0 relative z-10">
+            <span className={transparent ? 'text-white' : 'text-[var(--dark)]'}>Dr. Aib</span>{' '}
             <span className="text-[var(--accent)]">Amar</span>
           </Link>
 
-          {/* Desktop Nav — center */}
+          {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
               <div
@@ -104,16 +124,20 @@ export default function NavigationHeader() {
                 {link.href ? (
                   <Link
                     to={link.href}
-                    className={`nav-link transition-colors duration-150 ${
+                    className={`nav-link transition-colors duration-200 ${
                       isActive(link.href)
                         ? 'text-[var(--accent)]'
+                        : transparent
+                        ? 'text-white/90 hover:text-white'
                         : 'text-[var(--dark)] hover:text-[var(--accent)]'
                     }`}
                   >
                     {link.label}
                   </Link>
                 ) : (
-                  <button className="nav-link text-[var(--dark)] hover:text-[var(--accent)] transition-colors duration-150 flex items-center gap-1">
+                  <button className={`nav-link flex items-center gap-1 transition-colors duration-200 ${
+                    transparent ? 'text-white/90 hover:text-white' : 'text-[var(--dark)] hover:text-[var(--accent)]'
+                  }`}>
                     {link.label}
                     <span className="text-[7px] opacity-50">▼</span>
                   </button>
@@ -151,20 +175,24 @@ export default function NavigationHeader() {
           </nav>
 
           {/* CTA + Hamburger */}
-          <div className="flex items-center gap-3 flex-shrink-0">
+          <div className="flex items-center gap-3 flex-shrink-0 relative z-10">
             <Link
               to="/booking"
-              className="hidden lg:inline-flex items-center font-body text-[11px] font-medium uppercase tracking-[0.12em] text-white bg-[var(--accent)] px-5 py-2.5 hover:bg-[var(--dark)] transition-colors duration-250"
+              className={`hidden lg:inline-flex items-center font-body text-[11px] font-medium uppercase tracking-[0.12em] px-5 py-2.5 transition-all duration-300 ${
+                transparent
+                  ? 'border border-white text-white hover:bg-white hover:text-[var(--dark)]'
+                  : 'bg-[var(--accent)] text-white hover:bg-[var(--dark)]'
+              }`}
             >
               Prendre RDV
             </Link>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]"
-              aria-label="Menu"
+              aria-label="Ouvrir le menu"
             >
-              <span className={`block w-5 h-[1.5px] bg-[var(--dark)] transition-all duration-250 ${mobileOpen ? 'rotate-45 translate-y-[3.25px]' : ''}`} />
-              <span className={`block w-5 h-[1.5px] bg-[var(--dark)] transition-all duration-250 ${mobileOpen ? '-rotate-45 -translate-y-[3.25px]' : ''}`} />
+              <span className={`block w-5 h-[1.5px] transition-all duration-250 ${mobileOpen ? 'rotate-45 translate-y-[3.25px]' : ''} ${transparent ? 'bg-white' : 'bg-[var(--dark)]'}`} />
+              <span className={`block w-5 h-[1.5px] transition-all duration-250 ${mobileOpen ? '-rotate-45 -translate-y-[3.25px]' : ''} ${transparent ? 'bg-white' : 'bg-[var(--dark)]'}`} />
             </button>
           </div>
         </div>
@@ -199,7 +227,7 @@ export default function NavigationHeader() {
             ))}
           </nav>
           <div className="mt-8 pb-8">
-            <Link to="/booking" className="inline-flex font-body text-[11px] font-medium uppercase tracking-[0.12em] text-white bg-[var(--accent)] px-8 py-3">
+            <Link to="/booking" className="inline-flex font-body text-[11px] font-medium uppercase tracking-[0.12em] text-white bg-[var(--accent)] px-8 py-3 hover:bg-[var(--dark)] transition-colors duration-200">
               Prendre RDV
             </Link>
           </div>

@@ -58,7 +58,7 @@ export default function PhilosophieSection() {
           className="min-h-[400px] lg:min-h-0 order-1 lg:order-2 overflow-hidden"
         >
           <img
-            src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=900&q=85"
+            src="https://images.pexels.com/photos/3825538/pexels-photo-3825538.jpeg?auto=compress&cs=tinysrgb&w=900"
             alt="Bloc opératoire — Dr. Aib Amar"
             className="w-full h-full object-cover min-h-[400px]"
           />

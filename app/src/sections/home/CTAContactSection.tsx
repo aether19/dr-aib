@@ -8,7 +8,7 @@ export default function CTAContactSection() {
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&q=85"
+          src="https://images.pexels.com/photos/3376790/pexels-photo-3376790.jpeg?auto=compress&cs=tinysrgb&w=1920"
           alt="Clinique Dr. Aib Amar — Alger"
           className="w-full h-full object-cover object-center"
         />
