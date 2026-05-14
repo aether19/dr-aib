@@ -28,15 +28,15 @@ export const procedureImages: Record<string, string> = {
 
   // ── Chirurgie du Visage — real clinic photos ─────────────────────────────
   'rhinoplastie':
-    `${SHAFER}/1732551071-85719aa8-7cdd-473c-9c14-76102afd5838.png`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2Fc6032703d9e74124be0a459df73d3863?format=webp&width=800`,
   'oreille-decollees':
-    `${SHAFER}/1729197077-facelift-bf4b.jpeg`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2Fcc3a96426c0f4a40a37297873723609f?format=webp&width=800`,
   'lifting':
-    `${ASPS}/Facelift/facelift.jpg`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F7162ad0220b84ae4a7ab1f3ae5f3b5c7?format=webp&width=800`,
   'lifting-cervico-facial':
-    `${ASPS}/Neck-Lift/neck-lift.jpg`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F4b209abcbea94ba6b361be0d2b3a5d8a?format=webp&width=800`,
   'blepharoplastie':
-    `${ASPS}/Eyelid-Surgery/eyelid-surgery.jpg`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2Fcb00558421d54cf890ec77700e8e7335?format=webp&width=800`,
 
   // ── Médecine Esthétique — real clinic photos ─────────────────────────────
   'greffe-capilaire':
