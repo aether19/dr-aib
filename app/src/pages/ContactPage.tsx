@@ -52,7 +52,7 @@ export default function ContactPage() {
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-[var(--dark)] pt-[72px]">
         <div className="absolute inset-0 z-0 opacity-20">
-          <img src="https://images.pexels.com/photos/3376790/pexels-photo-3376790.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1600&q=90"
             alt="" className="w-full h-full object-cover"/>
         </div>
         <div className="relative z-10 max-w-[1280px] mx-auto px-6 md:px-10 py-20 md:py-28 grid grid-cols-1 lg:grid-cols-2 gap-10 items-end">

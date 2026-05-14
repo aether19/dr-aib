@@ -124,7 +124,7 @@ export default function DoctorPage() {
         <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-[45%_55%] border-t border-[var(--line)] border-opacity-50">
           <ScrollReveal direction="left" distance={30} duration={0.9} className="min-h-[280px] lg:min-h-[400px] order-2 lg:order-1">
             <img
-              src="https://images.pexels.com/photos/3376790/pexels-photo-3376790.jpeg?auto=compress&cs=tinysrgb&w=900"
+              src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=900&q=90"
               alt="Cabinet Dr. Aib Amar — Alger"
               className="w-full h-full object-cover object-center min-h-[280px] lg:min-h-[400px]"
             />
@@ -231,7 +231,7 @@ export default function DoctorPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
             {mediaItems.map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.15}>
-                <img src="https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=800" alt={item.label} className="w-full h-[240px] object-cover" />
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=90" alt={item.label} className="w-full h-[240px] object-cover" />
                 <h3 className="font-display text-[22px] md:text-[24px] font-normal text-[var(--dark)] mt-5">
                   {item.title}
                 </h3>
