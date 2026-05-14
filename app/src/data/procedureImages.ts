@@ -1,33 +1,32 @@
 // ─── Procedure Images ─────────────────────────────────────────────────────────
-// Real photos sourced from actual plastic surgery clinic websites:
-//   • Shafer Plastic Surgery (shaferplasticsurgery.com) — NYC reference clinic
-//   • American Society of Plastic Surgeons (plasticsurgery.org)
-// All URLs verified 200 OK.
+// Chirurgie du Corps: uploaded by Dr. Aib Amar (Builder.io CDN)
+// Chirurgie du Visage + Médecine Esthétique: Shafer PS / ASPS clinic sites
 
+const CDN = 'https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009';
 const SHAFER = 'https://www.shaferplasticsurgery.com/wp-content/uploads/2025/07';
 const ASPS   = 'https://www.plasticsurgery.org/images/Procedures';
 
 export const procedureImages: Record<string, string> = {
 
-  // ── Chirurgie du Corps ───────────────────────────────────────────────────
+  // ── Chirurgie du Corps — uploaded images (in order) ──────────────────────
   'prothese-mammaire':
-    `${SHAFER}/1730748192-breast-augmentation-banner.jpg`,
+    `${CDN}%2Fb9c2e230a415411d921d87c3e728d47c?format=webp&width=800`,
   'reduction-mammaire':
-    `${ASPS}/Breast-Reduction/breast-reduction.jpg`,
+    `${CDN}%2F942f4dd731974a699b447e250fa02925?format=webp&width=800`,
   'remonter-seins':
-    `${ASPS}/Breast-Lift/breast-lift.jpg`,
-  'liposuccion':
-    `${ASPS}/Liposuction/liposuction.jpg`,
+    `${CDN}%2Fc7c2c8190fa94296950484ff137f3f8d?format=webp&width=800`,
   'gynecomastie':
-    `${SHAFER}/1732550999-b559e5dc-f03e-47f5-84e2-18ba8a5e8a1a.png`,
+    `${CDN}%2Fcfeb87c604af4e3a9dcb744413d86df9?format=webp&width=800`,
+  'liposuccion':
+    `${CDN}%2F83a3e3be172041328d7937fa05964aca?format=webp&width=800`,
   'abdominoplastie':
-    `${ASPS}/Tummy-Tuck/tummy-tuck.jpg`,
+    `${CDN}%2F10576b8995544fc09e440372414bd8d9?format=webp&width=800`,
   'silhouette-lift':
-    `${SHAFER}/1733336933-renuvion-skin-tightening-banner-1.jpg`,
+    `${CDN}%2F8dc31a91d4404c83b37f364320ad3d43?format=webp&width=800`,
   'reconstruction-plastique':
-    `${SHAFER}/1730157143-before-after-bgd-1-scaled.jpg`,
+    `${CDN}%2Fe8e270d04fb4437e8d5c5a8637058117?format=webp&width=800`,
 
-  // ── Chirurgie du Visage ──────────────────────────────────────────────────
+  // ── Chirurgie du Visage — real clinic photos ─────────────────────────────
   'rhinoplastie':
     `${SHAFER}/1732551071-85719aa8-7cdd-473c-9c14-76102afd5838.png`,
   'oreille-decollees':
@@ -39,7 +38,7 @@ export const procedureImages: Record<string, string> = {
   'blepharoplastie':
     `${ASPS}/Eyelid-Surgery/eyelid-surgery.jpg`,
 
-  // ── Médecine Esthétique ──────────────────────────────────────────────────
+  // ── Médecine Esthétique — real clinic photos ─────────────────────────────
   'greffe-capilaire':
     `${SHAFER}/1732571595-d9e15c36-5f99-40dd-80e9-190051f8e13e.png`,
   'botox':
