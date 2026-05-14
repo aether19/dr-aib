@@ -3,8 +3,6 @@
 // Chirurgie du Visage + Médecine Esthétique: Shafer PS / ASPS clinic sites
 
 const CDN = 'https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009';
-const SHAFER = 'https://www.shaferplasticsurgery.com/wp-content/uploads/2025/07';
-const ASPS   = 'https://www.plasticsurgery.org/images/Procedures';
 
 export const procedureImages: Record<string, string> = {
 
@@ -12,13 +10,13 @@ export const procedureImages: Record<string, string> = {
   'prothese-mammaire':
     `${CDN}%2Fb9c2e230a415411d921d87c3e728d47c?format=webp&width=800`,
   'reduction-mammaire':
-    `${CDN}%2F942f4dd731974a699b447e250fa02925?format=webp&width=800`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F1dac38ab05a24833a3f6dbdb076c61d6?format=webp&width=800`,
   'remonter-seins':
-    `${CDN}%2Fc7c2c8190fa94296950484ff137f3f8d?format=webp&width=800`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F3399acbea15645c1bb5f79e4b8da317e?format=webp&width=800`,
   'gynecomastie':
-    `${CDN}%2Fcfeb87c604af4e3a9dcb744413d86df9?format=webp&width=800`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2Fcc59a2a1a1824a7e9000df3e0a329ece?format=webp&width=800`,
   'liposuccion':
-    `${CDN}%2F83a3e3be172041328d7937fa05964aca?format=webp&width=800`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F1d7e16bb1e0d4314b79c77534f7280db?format=webp&width=800`,
   'abdominoplastie':
     `${CDN}%2F10576b8995544fc09e440372414bd8d9?format=webp&width=800`,
   'silhouette-lift':
@@ -36,25 +34,25 @@ export const procedureImages: Record<string, string> = {
   'lifting-cervico-facial':
     `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F4b209abcbea94ba6b361be0d2b3a5d8a?format=webp&width=800`,
   'blepharoplastie':
-    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2Fcb00558421d54cf890ec77700e8e7335?format=webp&width=800`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F2cad5b791f6a41c48618fc7401999b24?format=webp&width=800`,
 
   // ── Médecine Esthétique — real clinic photos ─────────────────────────────
   'greffe-capilaire':
-    `${SHAFER}/1732571595-d9e15c36-5f99-40dd-80e9-190051f8e13e.png`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F51f459d37a86414e82cf6b49337ed468?format=webp&width=800`,
   'botox':
-    `${SHAFER}/1729197255-botox-0518.jpeg`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F20e8515b3ab0473893d770805a4625a2?format=webp&width=800`,
   'acide-hyaluronique':
-    `${SHAFER}/1733328102-lip-lift-banner.jpg`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2Fdb0405ab45f940f1875f5774f4153d2f?format=webp&width=800`,
   'peeling':
-    `${SHAFER}/1734378113-edyta-half-image.jpg`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2Fdb890ffad84f4c2aaadaae0bf59033e9?format=webp&width=800`,
   'cerne':
-    `${ASPS}/Eyelid-Surgery/eyelid-surgery.jpg`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F6963fea3f81f4f6e9a202e99464aa043?format=webp&width=800`,
   'microdermabrasion':
-    `${SHAFER}/1732551010-f957de1b-1e23-4feb-a548-95690ab29882.png`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F31fd75726f0742e9a2de0d68011bea47?format=webp&width=800`,
   'apres-chirurgie':
-    `${SHAFER}/1730232881-sub-cta-scaled.jpg`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F71e7d573ca544d84b7c62a5ff4732a96?format=webp&width=800`,
   'grossesse':
-    `${ASPS}/Tummy-Tuck/tummy-tuck.jpg`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F9adbbcbbd21240e4b8cc5afbf43e9668?format=webp&width=800`,
 };
 
 // ── Section / hero images (NOT procedure-specific — keep as-is) ───────────
