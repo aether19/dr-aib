@@ -55,7 +55,7 @@ export default function AnimatedHeading({
     return parts.map((part, j) => (
       <span key={j}>
         {part}
-        {j < parts.length - 1 && <em className="italic">{line.italicWord}</em>}
+        {j < parts.length - 1 && <span className="italic">{line.italicWord}</span>}
       </span>
     ));
   };
