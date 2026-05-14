@@ -1,62 +1,62 @@
 // ─── Procedure Images ────────────────────────────────────────────────────────
-// Sourced from Unsplash medical/aesthetic collections
-// Each image is matched to the specific procedure or body area
+// AI-generated via Pollinations.ai — each image is specifically prompted
+// for the corresponding procedure or body area.
 
-const U = (id: string, w = 900) =>
-  `https://images.unsplash.com/${id}?w=${w}&q=90&auto=format&fit=crop`;
+const AI = (prompt: string, seed: number, w = 800, h = 600) =>
+  `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=${w}&height=${h}&seed=${seed}&nologo=true`;
 
 export const procedureImages: Record<string, string> = {
 
   // ── Chirurgie du Corps ────────────────────────────────────────────────────
   'prothese-mammaire':
-    U('photo-1576091160399-112ba8d25d1d'),   // clinical medical consultation
+    AI('professional aesthetic plastic surgery clinic breast augmentation consultation luxurious medical setting', 101),
   'reduction-mammaire':
-    U('photo-1576091160550-2173dba999ef'),   // medical clinic setting
+    AI('breast reduction plastic surgery medical clinic professional consultation aesthetic', 102),
   'remonter-seins':
-    U('photo-1551076805-e1869033e561'),      // medical procedure clinical
+    AI('breast lift mastopexy aesthetic surgery medical clinic consultation professional', 103),
   'liposuccion':
-    U('photo-1571019613454-1cb2f99b2d8b'),   // body measurement clinical
+    AI('liposuction body contouring plastic surgery aesthetic clinic medical professional consultation', 104),
   'gynecomastie':
-    U('photo-1612349317150-e413f6a5b16d'),   // medical examination upper body
+    AI('gynecomastia male chest plastic surgery medical clinic professional consultation aesthetic', 105),
   'abdominoplastie':
-    U('photo-1559757148-5c350d0d3c56'),      // abdomen clinical
+    AI('tummy tuck abdominoplasty plastic surgery aesthetic clinic medical professional consultation', 106),
   'silhouette-lift':
-    U('photo-1576091160399-112ba8d25d1d'),   // clinic/consultation
+    AI('body silhouette lift contouring aesthetic plastic surgery medical clinic professional', 107),
   'reconstruction-plastique':
-    U('photo-1551601651-2a8555f1a136'),      // operating room (confirmed OR image)
+    AI('reconstructive plastic surgery medical clinic professional operating room aesthetic', 108),
 
   // ── Chirurgie du Visage ───────────────────────────────────────────────────
   'rhinoplastie':
-    U('photo-1580489944761-15a19d654956'),   // woman face/profile beauty
+    AI('rhinoplasty nose cosmetic surgery aesthetic clinic beautiful side profile medical professional', 201),
   'oreille-decollees':
-    U('photo-1509967419530-da38b4704bc6'),   // face profile/skin close-up
+    AI('otoplasty ear surgery aesthetic medical clinic professional consultation', 202),
   'lifting':
-    U('photo-1559757175-5700dde675bc'),      // face anti-aging / skin care
+    AI('facelift facial rejuvenation aesthetic plastic surgery clinic medical professional', 203),
   'lifting-cervico-facial':
-    U('photo-1570172619644-dfd03ed5d881'),   // facial skin treatment close-up
+    AI('cervicofacial neck facelift aesthetic surgery medical clinic professional consultation', 204),
   'blepharoplastie':
-    U('photo-1494790108377-be9c29b29330'),   // woman eye area close-up
+    AI('blepharoplasty eyelid surgery aesthetic medical clinic professional close up eye', 205),
 
   // ── Médecine Esthétique ───────────────────────────────────────────────────
   'greffe-capilaire':
-    U('photo-1522337360788-8b13dee7a37e'),   // hair treatment / scalp
+    AI('hair transplant surgery medical clinic professional aesthetic scalp treatment', 301),
   'botox':
-    U('photo-1576091160550-2173dba999ef'),   // medical aesthetic / clinic
+    AI('botox facial injection aesthetic medicine clinic medical professional treatment', 302),
   'acide-hyaluronique':
-    U('photo-1515377905703-c4788e51af15'),   // skin / face care product
+    AI('hyaluronic acid lip filler injection aesthetic clinic medical professional beautiful', 303),
   'peeling':
-    U('photo-1570172619644-dfd03ed5d881'),   // facial skin treatment
+    AI('chemical peel skin rejuvenation treatment aesthetic clinic medical professional', 304),
   'cerne':
-    U('photo-1494790108377-be9c29b29330'),   // eye / under-eye area
+    AI('under eye dark circle treatment aesthetic medical clinic professional', 305),
   'microdermabrasion':
-    U('photo-1515377905703-c4788e51af15'),   // skin treatment / care
+    AI('microdermabrasion skin resurfacing aesthetic clinic medical professional treatment', 306),
   'apres-chirurgie':
-    U('photo-1579684385127-1ef15d508118'),   // medical follow-up
+    AI('post surgery follow up consultation medical clinic doctor patient professional care', 307),
   'grossesse':
-    U('photo-1476703993599-0035a21b17a9'),   // maternity / body care
+    AI('post pregnancy body care aesthetic clinic medical professional wellness consultation', 308),
 };
 
-// Section/hero images (not procedure-specific)
+// ── Section / hero images (NOT procedure-specific — keep as-is) ──────────────
 export const HERO_IMAGE    = 'https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1920&q=90&auto=format&fit=crop';
 export const OR_IMAGE      = 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=900&q=90&auto=format&fit=crop';
 export const CONSULT_IMAGE = 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=900&q=90&auto=format&fit=crop';

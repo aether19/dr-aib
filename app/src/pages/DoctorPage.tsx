@@ -231,7 +231,15 @@ export default function DoctorPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
             {mediaItems.map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.15}>
-                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=90" alt={item.label} className="w-full h-[240px] object-cover" />
+                <img
+                  src={
+                    i === 0
+                      ? 'https://image.pollinations.ai/prompt/doctor%20plastic%20surgery%20television%20interview%20Algeria%20news%20broadcast%20studio%20professional?width=800&height=480&seed=401&nologo=true'
+                      : 'https://image.pollinations.ai/prompt/plastic%20surgeon%20newspaper%20press%20article%20Algeria%20media%20coverage%20professional%20aesthetic%20clinic?width=800&height=480&seed=402&nologo=true'
+                  }
+                  alt={item.label}
+                  className="w-full h-[240px] object-cover"
+                />
                 <h3 className="font-display text-[22px] md:text-[24px] font-normal text-[var(--dark)] mt-5">
                   {item.title}
                 </h3>

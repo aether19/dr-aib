@@ -223,9 +223,9 @@ export default function ContactPage() {
           </h3>
           <div className="w-full overflow-hidden border border-[var(--line)]" style={{ height: '380px' }}>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.123456789!2d3.0711!3d36.7325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128fb26b3ff3d59d%3A0x0!2sGaridi+2%2C+Kouba%2C+Alger!5e0!3m2!1sfr!2sdz!4v1700000000000!5m2!1sfr!2sdz"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.5!2d3.0900!3d36.7050!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb364aa5c65f0df2a!2sAmar%20Aib%20clinique%20de%20chirurgie%20esth%C3%A9tique!5e0!3m2!1sfr!2sdz!4v1700000000000!5m2!1sfr!2sdz"
               width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade" title="Cabinet Dr. Aib Amar"/>
+              referrerPolicy="no-referrer-when-downgrade" title="Amar Aib Clinique de Chirurgie Esthétique"/>
           </div>
         </div>
       </section>
