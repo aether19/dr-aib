@@ -26,11 +26,11 @@ export const procedureImages: Record<string, string> = {
 
   // ── Chirurgie du Visage — real clinic photos ─────────────────────────────
   'rhinoplastie':
-    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2Fc6032703d9e74124be0a459df73d3863?format=webp&width=800`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F27576ea936884390aeb395b415376bef?format=webp&width=800`,
   'oreille-decollees':
     `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2Fcc3a96426c0f4a40a37297873723609f?format=webp&width=800`,
   'lifting':
-    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F7162ad0220b84ae4a7ab1f3ae5f3b5c7?format=webp&width=800`,
+    `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F845777eb1eb743d8a856d2dceae387ab?format=webp&width=800`,
   'lifting-cervico-facial':
     `https://cdn.builder.io/api/v1/image/assets%2F256e4933475b4e70b4bdbc906fdb0009%2F4b209abcbea94ba6b361be0d2b3a5d8a?format=webp&width=800`,
   'blepharoplastie':
